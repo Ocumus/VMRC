@@ -26,6 +26,14 @@
 #Enter either your vcenter or your esxi server here
 host = "192.168.1.1"
 
+#Enable SSL Certificate Verification if possible!!!
+verifysslcert = True
+
+
+
+
+
+
 """ Python program for listing the vms on an ESX / vCenter host """
 
 import atexit
@@ -59,14 +67,16 @@ import getpass
 from collections import OrderedDict
 import re
 
-#import tools.cli as cli
-#DISABLE SSL CERT VERIFICATION
+#SSL CERT VERIFICATION SECTION AND IMPORTS
 from pyVim.connect import SmartConnect
 import requests
-requests.packages.urllib3.disable_warnings()
 import ssl
-#ssl.SSLContext.verify_mode = ssl.CERT_NONE
-ssl._create_default_https_context = ssl._create_unverified_context
+
+if not verifysslcert:
+	requests.packages.urllib3.disable_warnings()
+	ssl._create_default_https_context = ssl._create_unverified_context
+
+#Variable Setup
 vmdict = {}
 ctr = 0
 depthctr = 0

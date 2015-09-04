@@ -9,6 +9,8 @@ of the VM you wish to connect to.  It will then spawn a VMware Player session to
 
 Host - This parameter should be set to either your vCenter server if you have one or to your ESXi server if you don't.
 
+verifysslcert - Set this option to False if you do not want to verify your SSL certificate.  This is not recommended.
+
 
 #Requirements
 
