@@ -5,9 +5,12 @@ This project is a python3 based wrapper that allows a user to easily start VMwar
 It will connect to a vCenter server and get a list of all of the VMs available.  After which it will ask you to select the correct number
 of the VM you wish to connect to.  It will then spawn a VMware Player session to the Host that the VM is currently sitting on.
 
-# Why did we create this?  
+# Background  
 
-The vCenter Web Console for Linux sucks and doesn't pass through a lot of keyboard commands.  With VMware Player on Linux, the connection acts just like a VMRC connection within Windows where you press Ctrl+Alt to get out of the VM and all other keyboard/mouse commands are sent to the VM.
+There is no longer support for NPAPI in Google Chrome, so the standard VMRC stopped working on Linux.  VMware does not have a good solution thus far and they are working on a standalone version for Linux.  Until then, this script should do the trick.
+http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2091284
+
+The vCenter In-browser Web Console for Linux sucks and doesn't pass through a lot of keyboard commands.  With VMware Player on Linux, the connection acts just like a VMRC connection within Windows where you press Ctrl+Alt to get out of the VM and all other keyboard/mouse commands are sent to the VM.
 
 The issue with VMware Player on Linux is that you must enter the ESX host you want to connect to as well as the path to the VMX file to get to VM.  Entering this information is quite cumbersome unless you put it in a script.  Even then, you will have issues if your VMs move from host to host or switch datastores.
 
