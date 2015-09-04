@@ -14,9 +14,11 @@ Host - This parameter should be set to either your vCenter server if you have on
 
 Python3
 
-pip - if you want auto-installation of needed packages
+VMware Player for Linux https://www.vmware.com/products/player
 
 pyvmomi package
+
+pip - if you want auto-installation of needed packages
 
 Currently tested on Ubuntu, but should work on other distros.
 
